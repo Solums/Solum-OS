@@ -36,6 +36,7 @@ A = @printf "\033[1;32m[Build]\033[0m $@ ...\n";
 BUILD_YEAR = $(shell date +%y)
 BUILD_DATE = $(shell date +%Y%m%d)
 BUILD_TIME = $(shell date +%H%M)
+GITHASH = $(shell git log -1 --format="%h")
 
 all: info iso
 
@@ -74,7 +75,7 @@ $(KELF): $(O_FILE)
 
 build/$(ARCH)/%.o: %.c
 	@mkdir -p $(dir $@)
-	$(A)$(CC) $(CFLAGS) -DBUILD_DATE=\"$(BUILD_DATE)\" -DBUILD_TIME=\"$(BUILD_TIME)\" -DBUILD_YEAR=\"$(BUILD_YEAR)\" $< -o $@
+	$(A)$(CC) $(CFLAGS) -DBUILD_DATE=\"$(BUILD_DATE)\" -DBUILD_TIME=\"$(BUILD_TIME)\" -DBUILD_YEAR=\"$(BUILD_YEAR)\" -DGITHASH=\"$(GITHASH)\" $< -o $@
 
 build/$(ARCH)/%.o: %.as
 	@mkdir -p $(dir $@)
