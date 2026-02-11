@@ -102,6 +102,17 @@ void screen_clear(uint32_t color) {
     }
 }
 
+void screen_clear_char(uint32_t x, uint32_t y, uint32_t color) {
+    if (!framebuffer_addr || stride == 0) return;
+    if (x >= screen_width || y >= screen_height) return;
+
+    for (uint32_t row = 0; row < CHAR_H; row++) {
+        for (uint32_t col = 0; col < CHAR_W; col++) {
+            put_pixel(x + col, y + row, color);
+        }
+    }
+}
+
 void screen_scroll(uint32_t scroll_px, uint32_t color) {
     if (!framebuffer_addr || stride == 0) return;
     if (scroll_px == 0) return;
