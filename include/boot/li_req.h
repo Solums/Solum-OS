@@ -1,0 +1,35 @@
+/*
+ * Copyright (C) 2025 Roy Roy123ty@hotmail.com
+ * 
+ * This file is part of Solum OS
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#ifndef LI_REQ_H
+#define LI_REQ_H
+
+#include <stddef.h>
+
+extern volatile struct limine_framebuffer_request framebuffer_request;
+extern volatile struct limine_memmap_request memmap_request;
+extern volatile struct limine_bootloader_info_request bootloader_info_request;
+extern volatile struct limine_kernel_address_request kernel_address_request;
+extern volatile struct limine_rsdp_request rsdp_request;
+extern volatile struct limine_module_request module_request;
+extern volatile struct limine_kernel_file_request kernel_file_request;
+
+char *get_cmdline ();
+
+#endif
