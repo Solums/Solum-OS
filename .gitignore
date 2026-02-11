@@ -1,0 +1,9 @@
+.vscode/
+*.elf
+*.o
+assets/Limine/
+build/
+count
+.clocignore
+*.log
+*.iso
