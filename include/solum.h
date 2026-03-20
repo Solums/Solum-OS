@@ -85,7 +85,7 @@
 #endif
 
 // Full
-#define VER_FUL BASE_VERSION "-" DEV_SYM "+" BUILDID "&" GITHASH "@" CODENAME
+#define VER_FUL BASE_VERSION "-" DEV_SYM "+" BUILDID
 
 // Short
 #if DEV_STATE == DEV_STABLE
