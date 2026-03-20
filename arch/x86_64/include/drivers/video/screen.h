@@ -54,7 +54,6 @@ void screen_init();
 void screen_putc(char c, uint32_t x, uint32_t y, uint32_t color);
 void screen_write(const char *str, uint32_t x, uint32_t y, uint32_t color);
 void screen_clear(uint32_t color);
-void screen_clear_char(uint32_t x, uint32_t y, uint32_t color);
 void print_newline(); // 由于某些原因必须保留 for some reasons had to leave
 
 #endif

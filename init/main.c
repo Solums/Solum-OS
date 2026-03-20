@@ -33,8 +33,6 @@
 
 #include "arch.h"
 #include "drivers/tty.h"
-#include "drivers/keyboard.h"
-#include "drivers/shell.h"
 #include "kernel/msg/printk.h"
 #include "kernel/msg/logk.h"
 #include "kernel/msg/panic.h"
@@ -206,7 +204,6 @@ void kernel_main() {
 
 #endif      
 
-    keyboard_init();
-    shell_run();
+    halt();
 
 }
